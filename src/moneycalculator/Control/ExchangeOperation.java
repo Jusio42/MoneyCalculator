@@ -1,5 +1,5 @@
 
-package moneycalculator;
+package moneycalculator.Control;
 
 
 public class ExchangeOperation {
