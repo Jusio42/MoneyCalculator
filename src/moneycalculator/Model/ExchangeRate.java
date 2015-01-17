@@ -1,35 +1,43 @@
 package moneycalculator.Model;
 
-import java.util.Date;
-
+import java.util.Calendar;
 
 public class ExchangeRate {
-    private final Currency from;
-    private final Currency to;
-    private final int rate;
-    private Date date;
 
-    public ExchangeRate(Currency from, Currency to, int rate, Date date) {
-        this.from = from;
-        this.to = to;
-        this.rate = rate;
+    
+    private Currency fromCurrency;
+    private Currency toCurrency;
+    private Calendar date;
+    private MyNumber rate;
+
+    public ExchangeRate(Currency fromCurrency, Currency toCurrency, Calendar date, MyNumber rate) {
+        this.fromCurrency = fromCurrency;
+        this.toCurrency = toCurrency;
         this.date = date;
+        this.rate = rate;
     }
 
-    public Currency getFrom() {
-        return from;
+    public Currency getFromCurrency() {
+        return fromCurrency;
     }
 
-    public Currency getTo() {
-        return to;
+    public Currency getToCurrency() {
+        return toCurrency;
     }
 
-    public int getRate() {
+    public Calendar getDate() {
+        return date;
+    }
+
+    public MyNumber getRate() {
         return rate;
     }
 
-    public Date getDate() {
-        return date;
+    @Override
+    public String toString() {
+        return "fromCurrency: " + this.fromCurrency
+                + " toCurrency: " + this.toCurrency
+                + " date: " + this.date.get(Calendar.YEAR) + "-" + this.date.get(Calendar.MONTH) + 1 + "-" + this.date.get(Calendar.DAY_OF_MONTH)
+                + " rate: " + this.rate;
     }
-    
 }

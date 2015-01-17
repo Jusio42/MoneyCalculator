@@ -1,6 +1,7 @@
 package moneycalculator.Model;
 
 public class Currency {
+  
     private final String code;
     private final String symbol;
     private final String name;
@@ -21,6 +22,10 @@ public class Currency {
 
     public String getName() {
         return name;
+    }
+     @Override
+    public String toString() {
+        return this.code;
     }
     
 }

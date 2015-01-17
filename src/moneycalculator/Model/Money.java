@@ -1,20 +1,26 @@
 package moneycalculator.Model;
 
 public class Money {
-    private final double amount;
+
+    
+    private final MyNumber amount;
     private final Currency currency;
 
-    public Money(double amount, Currency currency) {
+    public Money(MyNumber amount, Currency currency) {
         this.amount = amount;
         this.currency = currency;
     }
 
-    public double getAmount() {
+    public MyNumber getAmount() {
         return amount;
     }
 
     public Currency getCurrency() {
         return currency;
     }
-    
+
+    @Override
+    public String toString() {
+        return "" + amount;
+    }
 }
